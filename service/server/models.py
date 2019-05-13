@@ -11,4 +11,4 @@ class Person(models.Model):
 # Create your models here.
 class Link(models.Model):
     id = models.AutoField(primary_key=True)
-    link = models.CharField(max_length = 200)
+    txt = models.CharField(max_length = 200,null=False)
