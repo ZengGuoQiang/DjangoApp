@@ -14,13 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from server import views as server_views
 from server.reptile import views as reptile
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('write/', server_views.write_server),
-    path('read/',server_views.read_server),
-    path('getCode/',reptile.getCode)
+    path('admin/', admin.site.urls),#进入数据库
+    path('write/', server_views.write_server),#写入person
+    path('read/',server_views.read_server),#获取person表的数据
+    path('getCode/', reptile.getCode),
+    path('txtCode/',include('server.reptile.urls'))
 ]

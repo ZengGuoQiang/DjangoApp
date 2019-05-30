@@ -24,7 +24,6 @@ def getLink():
         # pattern = re.compile(r'\s|\n|<.*?>|.*?《|》.*?', re.S)
         pattern = re.compile(r'\s|\n|<.*?>',re.S)
         a = pattern.sub('', str(a))
-        print(a)
         download_link.append(a)
         # print(a.text())
         # href = 'http://www.dytt8.net'+a['href']
